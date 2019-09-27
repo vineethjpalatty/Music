@@ -1,0 +1,136 @@
+<!-- <h2>Login</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Login</button>
+</form> -->
+	<!DOCTYPE html>
+	<html>
+	<head>
+	    <title>NewsApp</title>
+	   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+	   <link rel= stylesheet href="https //maxcdn.bootstrapcdn.com/bootstrap/4.7.0/css/font-awesome.min.css">
+	    <style>
+	        .login{
+	          min-height: 100vh;
+	          background-color: #f7f7f7;
+	        }
+	        .login .login-page{
+	          height: 100vh;display: flex;align-items: center;
+	        }
+	        .login .login-sidebar, .login-form-wrapper{
+	          background:#ffffff;height: 80vh;
+	        }
+	        .login .login-sidebar{
+	          background:  url('https://www.lundyslane.com/wp-content/uploads/2018/12/DJ_Image.jpg')center center no-repeat;
+	          background-size: 75%;
+	          display: flex;
+	          align-items: center;
+	          justify-content: center;
+	          position: relative;
+	        }
+	        .login .login-sidebar::before{
+	          content: '';
+	          position: absolute;
+	          top: 0;
+	          right: 0;
+	          bottom: 0;
+	          left: 0;
+	          z-index: 1;
+
+	          opacity: .8;
+	        }
+	        .login .login-sidebar .login-gradient-background{
+	          position: absolute;z-index: 2;
+	        }
+	        .login .login-sidebar .login-gradient-background h1{
+	          font-size: 2em;font-weight: 600;text-transform: uppercase;color: #ffffff;
+	        }
+
+	        .login-form-wrapper .register-btn a{
+	          color: black;border-radius: 18px;padding: 0.57em 2em;background: #dbaa23;
+	        }
+	        .login-form-wrapper .register-btn a:hover{
+	          opacity: .8;
+	        }
+	        .field-box .field{margin-bottom: 2.1em;}
+	        .login-form-wrapper .field-box{
+	          display: flex;
+	          height: 80%;
+	          align-items: center;
+	        }
+	        .login-form-wrapper .field-box .login-heading{
+	          font-size: 1.95em;
+	        }
+	        .login-form-wrapper .field-box .login-subheading{
+	          margin-bottom: 2em;font-size: 0.85em;color: #787877;
+	        }
+
+	        .login-form-wrapper .field-box .login1{
+	          background: #ffffff;color: black;border-radius: 18px;padding: 0.57em 2em;
+	        }
+	        .login-form-wrapper .field-box .login1 .forgot-link{
+	          color: #777777;font-size: 0.85em;
+	        }
+	        .login-form-wrapper .field-box .login1 .forgot-link:hover{
+	          color: #444444;font-size: 0.85em;
+	        }
+	        .login-heading{
+	            padding-left:50%
+
+	        }
+	    </style>
+	</head>
+<body>
+<section class="login is-fullheight">
+	<div class="login-body">
+	    <div class="container v-middle">
+	        <div class="columns login-page" style="background: linear-gradient(to right, #2457d7, #3b125d);">
+	              <div class="column is-5 login-sidebar is-hidden-mobile">
+	                <div class="login-gradient-background">
+
+	                </div>
+	              </div>
+	            <div class="column is-7 login-form-wrapper" style="background: linear-gradient(to right, #2457d7, #3b125d);">
+	                <div class="column is-12 has-text-right register-btn">
+	                  <a class="btn" href="#" name="button">Register</a>
+	                </div>
+	                <div class="column is-12 field-box">
+	                  <div class="column is-7 is-offset-1">
+						  <h1 class="login-heading"><font color="black"> Sign In</font></h1>
+
+
+
+
+	                    <form method="post">
+	                      {% csrf_token %}
+	                      <div class="field">
+
+
+							  <p><font color="black"> Username:{{ form.username }}</font></p>
+	                      </div>
+	                      <div class="field">
+
+							  <p><font color="black"> Password: {{ form.password }}</font></p>
+
+	                      </div>
+	                      <div style="padding-left:40%">
+	                         <button class="login1" type="submit">Login</button>
+	                      </div>
+	                        {{form.errors}}
+	                    </form>
+	                      <br>
+	                     
+	                  </div>
+	                </div>
+	            </div>
+
+	        </div>
+	    </div>
+
+
+	</div>
+
+</section>
+</body> 
+</html> 

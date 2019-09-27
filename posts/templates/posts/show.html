@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>show</title>
+</head>
+<body>
+    <h1>show page</h1>
+    {% for p in posts %}
+    <div style="padding:2%;background-color:lightblue">
+        <div>
+        {{ p.title }}
+        </div>
+        <div>
+        {{ p.description }}
+        </div>
+    </div>
+    {% endfor %}
+
+</body>
+</html>
