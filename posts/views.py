@@ -18,6 +18,9 @@ class Blog(View):
         form = PostForm(request.POST,request.FILES)
         form.save()
         print(form)
+
+
+
         return redirect('display')
 
 
@@ -26,8 +29,15 @@ class Blog(View):
 def BlogView2(request):
     posts=ModelPost.objects.all()
     form=PostForm
+
+    if 'q' in request.GET:
+        search_term = request.GET['q']
+        print(search_term)
+        posts = posts.filter(title__icontains=search_term)
+    print(posts)
     args={'posts':posts,'form':form}
     return render(request,"posts/show.html",args)
+
 
 
 
