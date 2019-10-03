@@ -1,16 +1,29 @@
+{%load widget_tweaks %}
 <html>
     <head>
         <title></title>
     </head>
+    <style>
+        .myfieldclass{
+            background-color:lightblue;
+            border:solid;
 
-    <body>
-        <h1>hii this is the page</h1>
-     <form method="post">
-        {% csrf_token %}
+        }
+    </style>
+<body>
 
-        {{ form.as_p}}
+     <form method="POST" action="{% url 'upload' %}" enctype='multipart/form-data'>
+         {% csrf_token %}
+
+         <h2>Title:</h2>{% render_field form.title class+='myfieldclass' %}
+         <h2>Description:</h2>{% render_field form.description class+='myfieldclass' %}
+
+          <h2>image:</h2>{% render_field form.image %}
+
+         <br>
 
          <input type="submit" class="button is-info" value="submit">
      </form>
-    </body>
+
+</body>
 </html>

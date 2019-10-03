@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'posts',
-    'clicks'
+    'clicks',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ USE_TZ = True
 STATIC_URL = '/blogs/clicks/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 LOGIN_REDIRECT_URL = '/'
+
+MEDIA_URL = '/blogs/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

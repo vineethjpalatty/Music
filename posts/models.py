@@ -1,11 +1,23 @@
 from django.db import models
+from django.forms import ModelForm, Textarea
 
 # Create your models here.
 
 class ModelPost(models.Model):
 
     title = models.CharField(max_length=120)
-    description = models.CharField(max_length=120)
+    image = models.FileField(null=True, blank=True,upload_to='images/')
+    description = models.TextField(max_length=120)
+
 
     def __str__(self):
         return self.title
+
+class PostModelForm(ModelForm):
+    class Meta:
+        model = ModelPost
+        fields=['title', 'image', 'description']
+        widgets = {
+            'description': Textarea(attrs={'cols': 80, 'rows': 20}),
+
+        }

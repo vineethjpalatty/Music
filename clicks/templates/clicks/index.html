@@ -32,6 +32,41 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
     .mySlides {display:none;}
+		.bouton, .bouton:disabled, .bouton:disabled:hover {
+			-webkit-box-shadow: 0 9px 6px -6px rgba(0, 0, 0, 0.5);
+			-moz-box-shadow: 0 9px 6px -6px rgba(0, 0, 0, 0.5);
+			box-shadow: 0 9px 6px -6px rgba(0, 0, 0, 0.5);
+			margin-top: 0px !important;
+			margin-bottom: 0px !important;
+			z-index: 0;
+			position: relative;
+			padding: 12px 28px !important;
+			border-radius: 100px;
+			-webkit-border-radius: 100px;
+			-moz-border-radius: 100px;
+			-o-border-radius: 100px;
+		}
+		.bouton {
+		    -o-transition: .3s;
+		    -ms-transition: .3s;
+		    -moz-transition: .3s;
+		    -webkit-transition: .3s;
+		    transition: .3s;
+		    background-color: black;
+
+		}
+		.bouton:hover {
+		    margin-top: -6px !important;
+		    margin-bottom: 10px !important;
+		    -webkit-box-shadow: 0 21px 6px -12px rgba(0, 0, 0, 0.2);
+		    -moz-box-shadow: 0 21px 6px -12px rgba(0, 0, 0, 0.2);
+		    box-shadow: 0 21px 6px -12px rgba(0, 0, 0, 0.2);
+		    z-index: 10;
+		    background: linear-gradient(to right, #2457d7, #3b125d);
+		}
+
+
+
     </style>
 </head>
 <body>
@@ -49,7 +84,7 @@
 						<div class="logo">
 							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
 								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
-								<span class="logo_text">Music</span>
+								<span class="logo_text">MusicLy</span>
 							</a>
 						</div>
 
@@ -127,18 +162,19 @@
 									<li style="background-color: #493cc2">welcome</li>
  -->
 									<li>
-										<img src="{%static 'images/1.jpg' %}" alt="music">
-										<audio controls>
 
-											<source src="{%static 'music/1.mp3' %}" type="audio/mp3">
+										<img src="{%static 'images/instruments.jpg' %}" alt="music">
+										<audio controls style="background-color:blue;width:100%">
+
+											<source src="{%static 'music/1.mp3' %}" type="audio/mp3" >
 
 
 												Your browser does not support the audio element.
 										</audio>
 									</li>
 									<li>
-										<img src="{%static 'images/1.jpg' %}" alt="music">
-										<audio controls>
+										<img src="{%static 'images/23.jpg' %}" alt="music">
+										<audio controls style="background-color:blue;width:100%">
 
 											<source src="{%static 'music/1.mp3' %}" type="audio/mp3">
 
@@ -158,7 +194,15 @@
 			</div>
 		</div>
 	</div>
+	<div class="button-container" style="padding-left: 40%">
+  		<a href="{% url 'upload' %}" class="bouton"><span><font color="white">Add MusicLy</font></span></a>
+	</div>
+
 </div>
+
+
+
+
 <footer class="footer">
 		<div class="background_image" style="background-image:url({%static 'images/footer.jpg' %})"></div>
 		<div class="footer_content">
@@ -170,7 +214,7 @@
 						<div class="logo">
 							<a href="#" class="d-flex flex-row align-items-end justify-content-start">
 								<span class="logo_bars d-flex flex-row align-items-end justify-content-between"><span></span><span></span><span></span><span></span><span></span></span>
-								<span class="logo_text">music</span>
+								<span class="logo_text">MusicLy</span>
 							</a>
 						</div>
 
